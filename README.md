@@ -4,7 +4,7 @@ pyrson
 A Digital Life Assistant (DLA) linking the following libraries:
 <ul>
 <li>dragonfly - for speech recognition and computer action control</li>
-<li>pytts - for text-to-speech</li>
+<li>pyttsx - for text-to-speech</li>
 <li>pyopencv - for face recognition</li>
 </ul>
 <br>

@@ -1,25 +1,18 @@
 pyrson
 ======
 
-A Digital Life Assistant (DLA) linking the following libraries:
-<ul>
-<li>dragonfly - for speech recognition and computer action control</li>
-<li>pyttsx - for text-to-speech</li>
-<li>pyopencv - for face recognition</li>
-</ul>
-<br>
-<br>and potentially:
-<ul>
-<li>nltk - for natural language processing (for complex requests like sentiment mining)</li>
-<li>RebeccaAIML - as a chat bot to run the AIML from CallMom by default</li>
-<li>home automation:</li>
-  <ul>
-  <li>python-X10</li>
-  <li>open-zb-home</li>
-  <li>python-xbee</li>
-  </ul>
-</ul>
+A Digital Life Assistant (DLA) currently linking the following libraries:
 
-<p>
-Ideally, the libraries will be easy to change in order to accomodate for changing technologies.
-</p>
+* [dragonfly](http://code.google.com/p/dragonfly/) - for speech recognition
+* [pyttsx](http://pypi.python.org/pypi/pyttsx) - for text-to-speech
+* [pyAIML](http://pyaiml.sourceforge.net/) - for chat bots
+
+pyrson may eventually include the following features:
+* actions integrated using some of the libraries from dragonfly
+* [opencv](http://opencv.willowgarage.com/documentation/python/index.html) - face recognition
+* [nltk](http://nltk.org/) - natural language processing (sentiment mining to change bot context)
+* [voiceid](http://code.google.com/p/voiceid/) - voice identification (diarization) to maintain a user context
+* [smartThings](http://www.kickstarter.com/projects/smartthings/smartthings-make-your-world-smarter) - home automation
+
+Currently, the project is only supported on Windows due to the dragonfly dependency for speech recognition and actions.
+Ideally, the libraries will be easy to change in order to accomodate for different platforms/changing technologies/user preferences.

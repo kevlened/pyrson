@@ -5,10 +5,10 @@ A Digital Life Assistant (DLA) currently linking the following libraries:
 
 * [dragonfly](http://code.google.com/p/dragonfly/) - for speech recognition
 * [pyttsx](http://pypi.python.org/pypi/pyttsx) - for text-to-speech
-* [pyAIML](http://pyaiml.sourceforge.net/) - for chat bots
+* [RiveScript](http://www.rivescript.com/rivescript) or [pyAIML](http://pyaiml.sourceforge.net/) - for chat bots
 
 pyrson may eventually include the following features:
-* actions integrated using some of the libraries from dragonfly
+* actions integrated using some of the libraries from dragonfly or [Autopy](http://www.autopy.org/)
 * [opencv](http://opencv.willowgarage.com/documentation/python/index.html) - face recognition
 * [nltk](http://nltk.org/) - natural language processing (sentiment mining to change bot context)
 * [voiceid](http://code.google.com/p/voiceid/) - voice identification (diarization) to maintain a user context

@@ -11,12 +11,16 @@
 
 from events import EventHook
 
-import time
-import pythoncom
-from dragonfly import (Grammar, AppContext, MappingRule, CompoundRule, Dictation,
-                      Choice, Key, Text)
-
 class dragonfly_stt():
+    try:
+        import time
+        import pythoncom
+        from dragonfly import (Grammar, AppContext, MappingRule, CompoundRule,
+                                Dictation, Choice, Key, Text)
+    except:
+        print "Unable to load the required libraries for dragonfly"
+        return
+
     #method to send new text to main Pyrson
     def fire(self, text):
         self.onNewText.fire(text)
@@ -49,3 +53,5 @@ class dragonfly_stt():
         while 1:
             pythoncom.PumpWaitingMessages()
             time.sleep(.1)
+
+class

@@ -1,4 +1,4 @@
 // Tell the user stuff about ourself.
 
 + give me an alert
-- <call>alert what the?</call>
+- <call>type_string do what?</call>

@@ -1,5 +1,6 @@
 > object alert python
-	from autopy import alert	
+	from autopy import alert
+	
 	alert.alert(' '.join(args))
 	return ""
 < object
@@ -13,8 +14,21 @@
 < object
 
 > object type_string python
-	from autopy import key	
-	key.type_string(' '.join(args))
+	from autopy import key
+	from array import array
+	
+	s = ' '.join(args)
+	sa = array('c',str(s))
+	spchar = set(str('!@#$%^&*()_+{}|:"<>?'))
+	
+	for c in sa:
+		if c in spchar:
+			key.tap(c,key.MOD_SHIFT)
+		else:
+			key.tap(c)
+		
+	return ""
+			
 	return ""
 < object
 

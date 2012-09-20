@@ -1,15 +1,5 @@
-#-------------------------------------------------------------------------------
-# Name:        module1
-# Purpose:
-#
-# Author:      Owner
-#
-# Created:     23/08/2012
-# Copyright:   (c) Owner 2012
-# Licence:     <your licence>
-#-------------------------------------------------------------------------------
+from multiprocessing import Process, Queue
 
-from events import EventHook
 from stt import dragonfly_stt
 from tts import TTSX
 from bots import RiveScriptBot
@@ -19,16 +9,21 @@ tts_library = TTSX()
 bot_library = RiveScriptBot()
 #vision_library = PyOpenCV()
 
+message_queue = Queue()
+
 def main():
-    stt_library.onNewText += new_text
     bot_library.learn("./RiveScript")
 
     #test bot to avoid stt mixups
     #text = "Give me an alert"
     #new_text(text)
 
-    #comment out to disable stt for testing
-    stt_library.start()
+    stt_process = Process(name='stt',target=stt_library.start, args=(message_queue,))
+    stt_process.start() #comment out to disable stt for testing
+
+    while True:
+        message = message_queue.get() #blocking for the message queue
+        new_text(message)
 
 def new_text(text):
     text = str(text)

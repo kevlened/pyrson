@@ -16,29 +16,25 @@ from events import EventHook
 
 class dragonfly_stt():
     def __init__(self):
-        self.onNewText = EventHook()
-
-    #method to send new text to main Pyrson
-    def fire(self, text):
-        self.onNewText.fire(text)
+        pass
 
     #rule that simply passes all input to the newtext event
     class Passthrough(CompoundRule):
         spec = "<text>"
         extras = [Dictation("text"), ]
-        newtext = EventHook()
+        textrecognition = EventHook()
 
         def _process_recognition(self, node, extras):
             text = extras["text"]
-            self.newtext.fire(text)
+            self.textrecognition.fire(text)
 
-    def start(self):
+    def start(self, queue):
         #instantiating the grammar and rule
         grammar = Grammar("passthrough")
         rule = self.Passthrough()
 
         #attaching the event
-        rule.newtext+=self.fire
+        rule.textrecognition+=queue.put
 
         #adding and loading rule
         grammar.add_rule(rule)

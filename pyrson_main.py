@@ -3,11 +3,12 @@ from multiprocessing import Process, Queue
 from stt import dragonfly_stt
 from tts import TTSX
 from bots import RiveScriptBot
+from vision import FaceDetection
 
 stt_library = dragonfly_stt()
 tts_library = TTSX()
 bot_library = RiveScriptBot()
-#vision_library = PyOpenCV()
+vision_library = FaceDetection()
 
 message_queue = Queue()
 
@@ -20,6 +21,9 @@ def main():
 
     stt_process = Process(name='stt',target=stt_library.start, args=(message_queue,))
     stt_process.start() #comment out to disable stt for testing
+
+    vision_process = Process(name='vision',target=vision_library.start, args=(message_queue,))
+    vision_process.start()
 
     while True:
         message = message_queue.get() #blocking for the message queue

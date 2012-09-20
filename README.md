@@ -7,10 +7,11 @@ A Digital Life Assistant (DLA) currently linking the following libraries:
 * [pyttsx](http://pypi.python.org/pypi/pyttsx) - for text-to-speech
 * [RiveScript](http://www.rivescript.com/rivescript) or [pyAIML](http://pyaiml.sourceforge.net/) - for chat bots
 * [AutoPy](http://www.autopy.org/) - for action support in RiveScripts
+* [opencv](http://opencv.willowgarage.com/documentation/python/index.html) - face detection
 
 pyrson may eventually include the following features:
 
-* [opencv](http://opencv.willowgarage.com/documentation/python/index.html) - face recognition
+* opencv - face recognition
 * [AT&T Watson](http://www.research.att.com/projects/WATSON/index.html?fbid=sS3GdYGyIR4), [pocketsphinx](http://cmusphinx.sourceforge.net/), [Julius](http://pypi.python.org/pypi/pyjulius), or [Google SST](http://wiki.openmoko.org/wiki/Google_Voice_Recognition) - cross-platform speech recognition
 * [voiceid](http://code.google.com/p/voiceid/) - voice identification (diarization) to maintain a user context
 * [nltk](http://nltk.org/) - natural language processing (sentiment mining to change bot context)

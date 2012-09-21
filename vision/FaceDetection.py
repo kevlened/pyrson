@@ -9,6 +9,7 @@
 # Licence:     <your licence>
 #-------------------------------------------------------------------------------
 
+import os
 import numpy as np
 import cv2
 import cv2.cv as cv
@@ -18,6 +19,9 @@ from opencv.common import clock, draw_str
 class FaceDetection:
     alreadydetected = False
     responsetext = "messagetrigger a person came into view messagetrigger"
+    defcascade = os.path.join(os.path.dirname(__file__), 'opencv', 'haarcascade_frontalface_alt.xml')
+    defnested = os.path.join(os.path.dirname(__file__), 'opencv', 'haarcascade_eye_tree_eyeglasses.xml')
+
 
     def detect(self, img, cascade):
         rects = cascade.detectMultiScale(img, scaleFactor=1.3, minNeighbors=4, minSize=(30, 30), flags = cv.CV_HAAR_SCALE_IMAGE)
@@ -33,8 +37,8 @@ class FaceDetection:
     def __init__(self):
         pass
 
-    def start(self, queue, cascade_file = './opencv/haarcascade_frontalface_alt.xml',
-            nested_file = '../../data/haarcascades/haarcascade_eye.xml'):
+    def start(self, queue, cascade_file = defcascade,
+            nested_file = defnested):
         #import sys, getopt
 
         #args, video_src = getopt.getopt(sys.argv[1:], '', ['cascade=', 'nested-cascade='])

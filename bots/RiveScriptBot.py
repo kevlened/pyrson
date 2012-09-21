@@ -9,21 +9,9 @@
 # Licence:     <your licence>
 #-------------------------------------------------------------------------------
 
-import aiml
 from rivescript import RiveScript
 
 failed_response = "I don't know what to say"
-
-class PyAIML():
-    def respond_to(self, text):
-        response = self.k.respond(text)
-        return response
-
-    def learn(self, filefoldername):
-        self.k.learn(filefoldername)
-
-    def __init__(self):
-        self.k = aiml.Kernel()
 
 class RiveScriptBot():
     def respond_to(self, text, user="localuser"):

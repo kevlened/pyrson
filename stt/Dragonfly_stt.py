@@ -14,7 +14,7 @@ from dragonfly import (Grammar, AppContext, MappingRule, CompoundRule,
                         Dictation, Choice, Key, Text)
 from events import EventHook
 
-class dragonfly_stt():
+class Dragonfly_stt():
     def __init__(self):
         pass
 

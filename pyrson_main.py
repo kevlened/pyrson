@@ -1,11 +1,12 @@
+import os
 from multiprocessing import Process, Queue
 
-from stt import dragonfly_stt
+from stt import Dragonfly_stt
 from tts import TTSX
 from bots import RiveScriptBot
 from vision import FaceDetection
 
-stt_library = dragonfly_stt()
+stt_library = Dragonfly_stt()
 tts_library = TTSX()
 bot_library = RiveScriptBot()
 vision_library = FaceDetection()
@@ -13,7 +14,8 @@ vision_library = FaceDetection()
 message_queue = Queue()
 
 def main():
-    bot_library.learn("./RiveScript")
+    botdn = os.path.join(os.path.dirname(__file__),'bots','RiveScript')
+    bot_library.learn(botdn)
 
     #test bot to avoid stt mixups
     #text = "Give me an alert"

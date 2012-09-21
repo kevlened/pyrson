@@ -2,18 +2,21 @@
 	from autopy import alert
 	
 	alert.alert(' '.join(args))
+	
 	return ""
 < object
 
 > object mouse python
 	from autopy import mouse	
+	
 	x = int(args[0])
 	y = int(args[1])
 	mouse.move(x,y)
+	
 	return ""
 < object
 
-> object type_string python
+> object typekeys python
 	from autopy import key
 	from array import array
 	
@@ -27,13 +30,5 @@
 		else:
 			key.tap(c)
 		
-	return ""
-			
-	return ""
-< object
-
-> object toggle python
-	from autopy import toggle	
-	alert.alert(args[0])
 	return ""
 < object

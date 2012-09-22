@@ -38,10 +38,10 @@ Download and install the following dependencies:
 * working microphone and webcam
 * download [zip](https://github.com/kevlened/pyrson/zipball/master) and extract to desired folder
 
-Notes:
-The libraries must be run with administrator rights unless UAC is disabled.
-Pywin32 on 64-bit may encounter pywin32 errors on installation that can be [fixed](http://sourceforge.net/tracker/?func=detail&aid=3402824&group_id=78018&atid=551954)
-Tests were run using an Intel Core-i5 2500 @3.30 GHz with great performance
+####notes:
+* The libraries must be run with administrator rights unless UAC is disabled.
+* Pywin32 on 64-bit may encounter pywin32 errors on installation that can be [fixed](http://sourceforge.net/tracker/?func=detail&aid=3402824&group_id=78018&atid=551954).
+* Tests were run using an Intel Core-i5 2500 @3.30 GHz with great performance
 
 Run
 ------
@@ -51,35 +51,35 @@ Double-click pyrson.py
 or
 
 (if UAC is enabled)
-Set C:/python27 in your PATH environment variable
-Open cmd as administrator
-Run 'python your/pyrson/directory/pyrson.py'
+* Set `C:\python27` in your PATH environment variable
+* Open cmd as administrator
+* Run `python your\pyrson\directory\pyrson.py`
 
 Modify
 ---------
 
 ###RiveScript
 
-By default pyrson uses RiveScript as its speech comprehension engine. Documentation for writing your own RiveScript files can be found [here](http://www.rivescript.com/docs/Tutorial.html). Any RiveScript files in the bots\RiveScript folder are loaded by pyrson.
+By default pyrson uses RiveScript as its speech comprehension engine. Documentation for writing your own RiveScript files can be found [here](http://www.rivescript.com/docs/Tutorial.html). Any RiveScript files in the `your\pyrson\directory\bots\RiveScript` folder are loaded by pyrson.
 
 In addition to the standard RiveScript responses, pyrson also includes functions to type text, move the mouse, or click within RiveScript. Here are examples:
 
 	//shows an alert
 	+ give me an alert
 	- <call>alert do what?</call>
-	
+
 	//moves the mouse to 100,150
 	+ move the mouse
 	- <call>mouse 100 150</call>
-	
+
 	//types Look at me! I'm typing.
 	+ can you type for me?
 	- <call>typekeys Look at me! I'm typing.<call>
 	
 ###PyAIML
 
-Pyrson can also use AIML instead of RiveScript. It will load all the AIML files in bots\AIML. Just change the following lines in pyrson.py:
+Pyrson can also use AIML instead of RiveScript. It will load all the AIML files in `your\pyrson\directory\bots\AIML`. Just change the following lines in pyrson.py:
 
-`from bots import RiveScriptBot` to `from bots import PyAIML`
-`bot_library = RiveScriptBot()` to `bot_library = PyAIML()`
-`botdn = os.path.join(os.path.dirname(__file__),'bots','RiveScript')` to `botdn = os.path.join(os.path.dirname(__file__),'bots','AIML')`
+* `from bots import RiveScriptBot` to `from bots import PyAIML`
+* `bot_library = RiveScriptBot()` to `bot_library = PyAIML()`
+* `botdn = os.path.join(os.path.dirname(__file__),'bots','RiveScript')` to `botdn = os.path.join(os.path.dirname(__file__),'bots','AIML')`

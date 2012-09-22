@@ -24,7 +24,7 @@ Installation
 
 Download and install the following dependencies:
 
-###Windows 7 32-bit:tested 64-bit:untested
+###Windows 7 32-bit: works 64-bit: works (see notes)
 * [32-bit Python 2.7](http://www.python.org/ftp/python/2.7.3/python-2.7.3.msi)
 * [32-bit pywin32 Build 217](http://sourceforge.net/projects/pywin32/files/pywin32/Build%20217/pywin32-217.win32-py2.7.exe/download)
 * [dragonfly 0.6.5](http://dragonfly.googlecode.com/files/dragonfly-0.6.5.win32.exe)
@@ -33,10 +33,15 @@ Download and install the following dependencies:
 * [python-rivescript 1.00](http://www.rivescript.com/files/win32/python-rivescript-1.00.win32.exe)
 * [32-bit autopy 0.51](http://pypi.python.org/packages/2.7/a/autopy/autopy-0.51.win32-py2.7.exe#md5=93e91799367e9207383747a633408185)
 * [numpy 1.6.2](http://sourceforge.net/projects/numpy/files/NumPy/1.6.2/numpy-1.6.2-win32-superpack-python2.7.exe/download)
-* [opencv 2.4.2 for Windows](http://sourceforge.net/projects/opencvlibrary/files/opencv-win/2.4.2/OpenCV-2.4.2.exe/download)
+* [opencv 2.4.2 for Windows](http://sourceforge.net/projects/opencvlibrary/files/opencv-win/2.4.2/OpenCV-2.4.2.exe/download) - unpack to C:\opencv
 * [32-bit opencv 2.4.2 python bindings (opencv-python-2.4.2.win32-py2.7.exe)](http://www.lfd.uci.edu/~gohlke/pythonlibs/#opencv)
 * working microphone and webcam
 * download [zip](https://github.com/kevlened/pyrson/zipball/master) and extract to desired folder
+
+Notes:
+The libraries must be run with administrator rights unless UAC is disabled.
+Pywin32 on 64-bit may encounter pywin32 errors on installation that can be [fixed](http://sourceforge.net/tracker/?func=detail&aid=3402824&group_id=78018&atid=551954)
+Tests were run using an Intel Core-i5 2500 @3.30 GHz with great performance
 
 Run
 ------
@@ -45,8 +50,10 @@ Double-click pyrson.py
 
 or
 
+(if UAC is enabled)
 Set C:/python27 in your PATH environment variable
-Run 'python your/pyrson/directory/pyrson.py' in cmd
+Open cmd as administrator
+Run 'python your/pyrson/directory/pyrson.py'
 
 Modify
 ---------
@@ -76,5 +83,3 @@ Pyrson can also use AIML instead of RiveScript. It will load all the AIML files 
 `from bots import RiveScriptBot` to `from bots import PyAIML`
 `bot_library = RiveScriptBot()` to `bot_library = PyAIML()`
 `botdn = os.path.join(os.path.dirname(__file__),'bots','RiveScript')` to `botdn = os.path.join(os.path.dirname(__file__),'bots','AIML')`
-
-	

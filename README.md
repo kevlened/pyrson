@@ -4,7 +4,7 @@ pyrson
 A Digital Life Assistant (DLA) currently linking the following libraries:
 
 * [dragonfly](http://code.google.com/p/dragonfly/) - for speech recognition
-* [pyttsx](http://pypi.python.org/pypi/pyttsx) - for text-to-speech
+* [pyttsx](http://pypi.python.org/pypi/pyttsx) or [Festival](http://www.cstr.ed.ac.uk/projects/festival/) - for text-to-speech
 * [RiveScript](http://www.rivescript.com/rivescript) or [pyAIML](http://pyaiml.sourceforge.net/) - for chat bots
 * [AutoPy](http://www.autopy.org/) - for action support in RiveScripts
 * [opencv](http://opencv.willowgarage.com/documentation/python/index.html) - face detection
@@ -29,7 +29,8 @@ Download and install the following dependencies:
 * [32-bit pywin32 Build 217](http://sourceforge.net/projects/pywin32/files/pywin32/Build%20217/pywin32-217.win32-py2.7.exe/download)
 * [dragonfly 0.6.5](http://dragonfly.googlecode.com/files/dragonfly-0.6.5.win32.exe)
 * [pyttsx 1.0](http://pypi.python.org/packages/any/p/pyttsx/pyttsx-1.0.win32.exe#md5=1bdf526eec286b683d61d97eb2922d4a)
-* [PyAIML 0.8.6](http://sourceforge.net/projects/pyaiml/files/PyAIML%20%28unstable%29/0.8.6/PyAIML-0.8.6.win32.exe/download)
+* (optional)[Festival 2.1](http://downloads.sourceforge.net/e-guidedog/festival-2.1-win.7z) - extract to `C:\festival`
+* (optional)[PyAIML 0.8.6](http://sourceforge.net/projects/pyaiml/files/PyAIML%20%28unstable%29/0.8.6/PyAIML-0.8.6.win32.exe/download)
 * [python-rivescript 1.00](http://www.rivescript.com/files/win32/python-rivescript-1.00.win32.exe)
 * [32-bit autopy 0.51](http://pypi.python.org/packages/2.7/a/autopy/autopy-0.51.win32-py2.7.exe#md5=93e91799367e9207383747a633408185)
 * [numpy 1.6.2](http://sourceforge.net/projects/numpy/files/NumPy/1.6.2/numpy-1.6.2-win32-superpack-python2.7.exe/download)
@@ -76,7 +77,7 @@ In addition to the standard RiveScript responses, pyrson also includes functions
 	+ can you type for me?
 	- <call>typekeys Look at me! I'm typing.<call>
 	
-###PyAIML
+###PyAIML (if installed)
 
 Pyrson can also use AIML instead of RiveScript. It will load all the AIML files in `your\pyrson\directory\bots\AIML`. Just change the following lines in pyrson.py:
 

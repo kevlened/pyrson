@@ -13,6 +13,7 @@ import pythoncom
 from dragonfly import (Grammar, AppContext, MappingRule, CompoundRule,
                         Dictation, Choice, Key, Text)
 from events import EventHook
+import MessageType
 
 class Dragonfly_stt():
     def __init__(self):
@@ -26,7 +27,7 @@ class Dragonfly_stt():
 
         def _process_recognition(self, node, extras):
             text = extras["text"]
-            self.textrecognition.fire(text)
+            self.textrecognition.fire([MessageType.TEXT,text])
 
     def start(self, queue):
         #instantiating the grammar and rule

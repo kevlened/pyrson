@@ -15,6 +15,7 @@ import cv2
 import cv2.cv as cv
 from opencv.video import create_capture
 from opencv.common import clock, draw_str
+import MessageType
 
 class FaceDetection:
     alreadydetected = False
@@ -60,7 +61,7 @@ class FaceDetection:
             vis = img.copy()
             self.draw_rects(vis, rects, (0, 255, 0))
             if not self.alreadydetected and len(rects) > 0:
-                queue.put(self.responsetext)
+                queue.put([MessageType.VISION, self.responsetext])
                 self.alreadydetected = True
             for x1, y1, x2, y2 in rects:
                 roi = gray[y1:y2, x1:x2]

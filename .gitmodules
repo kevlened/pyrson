@@ -1,0 +1,3 @@
+[submodule "bots\\pyaiml"]
+	path = bots\\pyaiml
+	url = https://github.com/creatorrr/pyAIML.git

@@ -1,2 +1,2 @@
-from PyAIML import PyAIML
+from PyAIMLBot import PyAIMLBot
 from RiveScriptBot import RiveScriptBot

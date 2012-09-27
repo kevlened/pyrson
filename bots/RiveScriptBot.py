@@ -9,7 +9,7 @@
 # Licence:     <your licence>
 #-------------------------------------------------------------------------------
 
-from rivescript import RiveScript
+import rivescript
 
 failed_response = "I don't know what to say"
 rivescript_failed_responses = set(["ERR: No Reply Found" , "ERR: No Reply Matched", "ERR: Error when executing Python object"])

@@ -22,4 +22,4 @@ class PyAIMLBot():
         self.k.learn(filefoldername)
 
     def __init__(self):
-        self.k = aiml.Kernel()
+        self.k = pyaiml.Kernel()

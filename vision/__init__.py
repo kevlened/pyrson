@@ -1,1 +1,4 @@
-from FaceDetection import FaceDetection
+try:
+	from FaceDetection import FaceDetection
+except:
+	pass

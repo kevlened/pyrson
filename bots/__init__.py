@@ -1,2 +1,9 @@
-from PyAIMLBot import PyAIMLBot
-from RiveScriptBot import RiveScriptBot
+try:	
+	from PyAIMLBot import PyAIMLBot
+except:
+	pass
+
+try:
+	from RiveScriptBot import RiveScriptBot
+except:
+	pass

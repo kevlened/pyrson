@@ -9,11 +9,11 @@
 # Licence:     <your licence>
 #-------------------------------------------------------------------------------
 import time
-import pythoncom
-from dragonfly import (Grammar, AppContext, MappingRule, CompoundRule,
-                        Dictation, Choice, Key, Text)
 from events import EventHook
 import MessageType
+import pythoncom
+from dragonfly import (Grammar, AppContext, MappingRule, CompoundRule,
+                    Dictation, Choice, Key, Text)
 
 class Dragonfly_stt():
     def __init__(self):

@@ -1,52 +1,22 @@
 import MessageType
+import time
 
-def getchloop(message_queue):
+def easygui_input(message_queue):
+    import easygui
+    while True:
+        response = easygui.enterbox(msg='Type something you want to communicate:', title='Communicate via text',strip=True)
+        if response:
+            message_queue.put([MessageType.TEXT,response])
+        else:
+            message_queue.put([MessageType.USERESCAPE,'q'])
+
+def windows_getch_loop(message_queue):
     try:
         import msvcrt
         while True:
             if msvcrt.kbhit():
                 ch = msvcrt.getch()
                 message_queue.put([MessageType.USERESCAPE,ch])
-    except ImportError:
-        message_queue.put([MessageType.TEXT,'Direct user input only accepted on Windows'])
-
-## {{{ http://code.activestate.com/recipes/134892/ (r2)
-class _Getch:
-    """Gets a single character from standard input.  Does not echo to the
-screen."""
-    def __init__(self):
-        try:
-            self.impl = _GetchWindows()
-        except ImportError:
-            self.impl = _GetchUnix()
-
-    def __call__(self): return self.impl()
-
-
-class _GetchUnix:
-    def __init__(self):
-        import tty, sys
-
-    def __call__(self):
-        import sys, tty, termios
-        fd = sys.stdin.fileno()
-        old_settings = termios.tcgetattr(fd)
-        try:
-            tty.setraw(sys.stdin.fileno())
-            ch = sys.stdin.read(1)
-        finally:
-            termios.tcsetattr(fd, termios.TCSADRAIN, old_settings)
-        return ch
-
-
-class _GetchWindows:
-    def __init__(self):
-        import msvcrt
-
-    def __call__(self):
-        import msvcrt
-        return msvcrt.getch()
-
-
-getch = _Getch()
-## end of http://code.activestate.com/recipes/134892/ }}}
+            time.sleep(.01)
+    except Exception, e:
+        message_queue.put([MessageType.TEXT,e])

@@ -1,6 +1,3 @@
-[submodule "bots\\pyaiml"]
-	path = bots\\pyaiml
-	url = https://github.com/creatorrr/pyAIML.git
-[submodule "bots\\rivescript"]
-	path = bots\\rivescript
+[submodule "bots/rivescript"]
+	path = bots/rivescript
 	url = https://github.com/kevlened/rivescript-python.git

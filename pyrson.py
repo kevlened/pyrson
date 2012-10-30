@@ -28,9 +28,9 @@ except:
 
 try:
     vision_library = vision.FaceDetection()
-    print "Successfully loaded vision library"
+    print "Successfully loaded vision"
 except:
-    print "Couldn't load vision library"  
+    print "Couldn't load vision"  
 
 message_queue = Queue()
 processes = []
@@ -63,7 +63,7 @@ def main():
         print "Couldn't load text input"
 
     if len(processes) == 0:
-        print "No libraries are loaded. Closing."
+        print "No input libraries are loaded. Closing."
         return
 
     print "Starting to poll for messages..."

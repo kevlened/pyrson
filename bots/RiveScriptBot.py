@@ -28,4 +28,4 @@ class RiveScriptBot():
         self.k.sort_replies()
 
     def __init__(self):
-        self.k = RiveScript()
+        self.k = rivescript.RiveScript()
